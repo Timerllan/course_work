@@ -22,3 +22,20 @@ def sorted_operations(operation_list):
 def return_date_time(str_type):
     return datetime.strptime(str_type, '%Y-%m-%dT%H:%M:%S.%f').strftime('%d.%m.%Y')
 
+#"Visa Gold 7756673469642839",
+    #"to": "Счет 48943806953649539453"
+def details_to_str(str_comment):
+    words = str_comment.split()
+    number = words[-1]
+    name = " ".join(words[:-1])
+    if len(number) == 20:
+        return f"{name} **{number[-4:]}"
+
+    else:
+        return f"{name} {number[0:4]} {number[4:6]}** **** {number[-4:]}"
+
+
+
+
+
+
