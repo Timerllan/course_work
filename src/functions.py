@@ -1,5 +1,5 @@
 import json
-import datetime
+from datetime import datetime
 
 
 FILE_BANK = 'operations.json'
@@ -15,10 +15,10 @@ def executed_operations(operation_list):
 
 
 def sorted_operations(operation_list):
-    return sorted(operation_list,key=lambda x:datetime.datetime.strptime(x['date'],'%Y-%m-%dT%H:%M:%S.%f'),reverse=True)
+    return sorted(operation_list,key=lambda x:datetime.strptime(x['date'],'%Y-%m-%dT%H:%M:%S.%f'),reverse=True)
 
 
 
-
-
+def return_date_time(str_type):
+    return datetime.strptime(str_type, '%Y-%m-%dT%H:%M:%S.%f').strftime('%d.%m.%Y')
 
